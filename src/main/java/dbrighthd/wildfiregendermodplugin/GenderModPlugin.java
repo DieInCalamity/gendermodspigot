@@ -1,4 +1,4 @@
-package dbrighthd.wildfiregendermodplugin; // test
+package dbrighthd.wildfiregendermodplugin;
 
 import dbrighthd.wildfiregendermodplugin.listeners.ConnectionListener;
 import dbrighthd.wildfiregendermodplugin.listeners.ModPayloadListener;
