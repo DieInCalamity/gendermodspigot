@@ -1,8 +1,16 @@
-name: Maven Build (Artifact Only)
+name: Maven Build
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+
+name: Maven Build (Artifacts)
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -18,10 +26,10 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B package
 
-    - name: Upload JAR as artifact
+    - name: Upload JAR
       uses: actions/upload-artifact@v4
       with:
-        name: my-app-jar
+        name: jar-file
         path: target/*.jar
